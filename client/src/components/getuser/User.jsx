@@ -11,7 +11,7 @@ const User = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get("http://localhost:1000/api/getAll");
+            const response = await axios.get("https://crud-app-api-delta.vercel.app/getAll");
             setUsers(response.data.userData); // make sure this is correct
           } catch (error) {
             console.error("Error fetching users:", error);
@@ -22,7 +22,7 @@ const User = () => {
       }, []);
 
       const deleteUser = async(userId) =>{
-        await axios.delete(`http://localhost:1000/api/delete/${userId}`)
+        await axios.delete(`https://crud-app-api-delta.vercel.app/delete/${userId}`)
         .then((response)=>{
             setUsers((prevUser)=>prevUser.filter((user)=> user._id !== userId))
             toast.success(response.data.message, {position:'top-right'})
