@@ -18,7 +18,7 @@ const Edit = () => {
     const [user, setUser] = useState(users);
 
     useEffect(() => {
-      axios.get(`http://localhost:1000/api/getone/${id}`)
+      axios.get(`https://crud-app-api-delta.vercel.app/getone/${id}`)
       .then((response)=>{
         // console.log("Fetched user:", response.data);
         setUser(response.data.user);
