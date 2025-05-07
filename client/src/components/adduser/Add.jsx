@@ -23,7 +23,7 @@ const Add = () => {
 
     const submitForm = async(e) =>{
         e.preventDefault();
-        await axios.post("http://localhost:1000/api/create", user)
+        await axios.post("https://crud-app-api-delta.vercel.app/create", user)
         .then((response)=>{
             toast.success(response.data.message, {position:"top-right"})
             navigate('/')
